@@ -33,6 +33,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data\TypeHelper.cs" />
+    <Compile Include="Data\CDColor.cs" />
+    <Compile Include="Data\CDVector.cs" />
+    <Compile Include="Data\CDRect.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
