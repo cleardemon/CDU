@@ -2,7 +2,7 @@
 // CDColor.cs
 //
 // Author:
-//       Bart King <bart@cleardemon.com>
+//       Bart King <github@cleardemon.com>
 //
 // Copyright (c) 2016 Bart King
 //
@@ -134,9 +134,9 @@ namespace ClearDemon.Utility.Data
 		public CDColor ApplyCorrection(float factor)
 		{
 			return new CDColor(
-				(byte)Math.Max(0, Math.Min(255f, ((float)R) * factor)),
-				(byte)Math.Max(0, Math.Min(255f, ((float)G) * factor)),
-				(byte)Math.Max(0, Math.Min(255f, ((float)B) * factor)),
+				(byte)Math.Max(0, Math.Min(255f, R * factor)),
+				(byte)Math.Max(0, Math.Min(255f, G * factor)),
+				(byte)Math.Max(0, Math.Min(255f, B * factor)),
 				A
 			);
 		}
@@ -147,7 +147,7 @@ namespace ClearDemon.Utility.Data
 		/// <returns>Int with ARGB format.</returns>
 		public int ToARGB()
 		{
-			return ((int)A << 24) + ((int)R << 16) + ((int)G << 8) + ((int)B);
+			return (A << 24) + (R << 16) + (G << 8) + B;
 		}
 
 		/// <summary>
@@ -156,7 +156,7 @@ namespace ClearDemon.Utility.Data
 		/// <returns>Int with RGBA format.</returns>
 		public int ToRGBA()
 		{
-			return ((int)R << 24) + ((int)G << 16) + ((int)B << 8) + ((int)A);
+			return (R << 24) + (G << 16) + (B << 8) + A;
 		}
 
 		/// <summary>
@@ -165,7 +165,7 @@ namespace ClearDemon.Utility.Data
 		/// <returns>Int with BRGA format.</returns>
 		public int ToBGRA()
 		{
-			return ((int)B << 24) + ((int)G << 16) + ((int)R << 8) + ((int)A);
+			return (B << 24) + (G << 16) + (R << 8) + A;
 		}
 
 		//

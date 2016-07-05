@@ -2,7 +2,7 @@
 // CDRect.cs
 //
 // Author:
-//       Bart King <bart@cleardemon.com>
+//       Bart King <github@cleardemon.com>
 //
 // Copyright (c) 2016 Bart King
 //
@@ -45,19 +45,19 @@ namespace ClearDemon.Utility.Data
 		/// <summary>
 		/// The x-coordinate in the rectangle (top-left origin).
 		/// </summary>
-		public Int32 X;
+		public int X;
 		/// <summary>
 		/// The y-coordinate in the rectangle (top-left origin).
 		/// </summary>
-		public Int32 Y;
+		public int Y;
 		/// <summary>
 		/// The width of the rectangle.
 		/// </summary>
-		public Int32 Width;
+		public int Width;
 		/// <summary>
 		/// The height of the rectangle.
 		/// </summary>
-		public Int32 Height;
+		public int Height;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CDRect"/> struct.
@@ -66,7 +66,7 @@ namespace ClearDemon.Utility.Data
 		/// <param name="y">The y coordinate.</param>
 		/// <param name="w">The width.</param>
 		/// <param name="h">The height.</param>
-		public CDRect(Int32 x, Int32 y, Int32 w, Int32 h)
+		public CDRect(int x, int y, int w, int h)
 		{
 			X = x;
 			Y = y;
@@ -82,7 +82,7 @@ namespace ClearDemon.Utility.Data
 		/// <param name="top">Top coordinate.</param>
 		/// <param name="right">Right coordinate.</param>
 		/// <param name="bottom">Bottom coordinate.</param>
-		public static CDRect FromLTRB(Int32 left, Int32 top, Int32 right, Int32 bottom)
+		public static CDRect FromLTRB(int left, int top, int right, int bottom)
 		{
 			return new CDRect(left, top, right - left, bottom - top);
 		}
@@ -130,7 +130,7 @@ namespace ClearDemon.Utility.Data
 		/// <summary>
 		/// Gets the left corner (top-left origin).
 		/// </summary>
-		public Int32 Left
+		public int Left
 		{
 			get { return X; }
 		}
@@ -139,7 +139,7 @@ namespace ClearDemon.Utility.Data
 		/// Gets the top corner (top-left origin).
 		/// </summary>
 		/// <value>The top.</value>
-		public Int32 Top
+		public int Top
 		{
 			get { return Y; }
 		}
@@ -147,7 +147,7 @@ namespace ClearDemon.Utility.Data
 		/// <summary>
 		/// Gets the rightmost corner (top-left origin).
 		/// </summary>
-		public Int32 Right
+		public int Right
 		{
 			get { return X + Width; }
 		}
@@ -155,7 +155,7 @@ namespace ClearDemon.Utility.Data
 		/// <summary>
 		/// Gets the bottommost corner (top-left origin).
 		/// </summary>
-		public Int32 Bottom
+		public int Bottom
 		{
 			get { return Y + Height; }
 		}
@@ -213,7 +213,7 @@ namespace ClearDemon.Utility.Data
 		/// </summary>
 		/// <param name="x">The x coordinate.</param>
 		/// <param name="y">The y coordinate.</param>
-		public bool Contains(Int32 x, Int32 y)
+		public bool Contains(int x, int y)
 		{
 			return X <= x && x < X + Width && Y <= y && y < Y + Height;
 		}
@@ -241,7 +241,7 @@ namespace ClearDemon.Utility.Data
 		/// </summary>
 		/// <param name="w">The width.</param>
 		/// <param name="h">The height.</param>
-		public void Inflate(Int32 w, Int32 h)
+		public void Inflate(int w, int h)
 		{
 			X -= w;
 			Y -= h;
@@ -272,7 +272,7 @@ namespace ClearDemon.Utility.Data
 			var h = Math.Min(a.Y + a.Height, b.Y + b.Height);
 			if(w >= x && h >= y)
 				return new CDRect(x, y, w - x, h - y);
-			return CDRect.Empty;
+			return Empty;
 		}
 
 		/// <summary>
@@ -320,19 +320,19 @@ namespace ClearDemon.Utility.Data
 		/// <summary>
 		/// The x-coordinate in the rectangle (top-left origin).
 		/// </summary>
-		public Single X;
+		public float X;
 		/// <summary>
 		/// The y-coordinate in the rectangle (top-left origin).
 		/// </summary>
-		public Single Y;
+		public float Y;
 		/// <summary>
 		/// The width of the rectangle.
 		/// </summary>
-		public Single Width;
+		public float Width;
 		/// <summary>
 		/// The height of the rectangle.
 		/// </summary>
-		public Single Height;
+		public float Height;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CDRectF"/> struct.
@@ -341,7 +341,7 @@ namespace ClearDemon.Utility.Data
 		/// <param name="y">The y coordinate.</param>
 		/// <param name="w">The width.</param>
 		/// <param name="h">The height.</param>
-		public CDRectF(Single x, Single y, Single w, Single h)
+		public CDRectF(float x, float y, float w, float h)
 		{
 			X = x;
 			Y = y;
@@ -357,7 +357,7 @@ namespace ClearDemon.Utility.Data
 		/// <param name="top">Top coordinate.</param>
 		/// <param name="right">Right coordinate.</param>
 		/// <param name="bottom">Bottom coordinate.</param>
-		public static CDRectF FromLTRB(Single left, Single top, Single right, Single bottom)
+		public static CDRectF FromLTRB(float left, float top, float right, float bottom)
 		{
 			return new CDRectF(left, top, right - left, bottom - top);
 		}
@@ -405,7 +405,7 @@ namespace ClearDemon.Utility.Data
 		/// <summary>
 		/// Gets the left corner (top-left origin).
 		/// </summary>
-		public Single Left
+		public float Left
 		{
 			get { return X; }
 		}
@@ -414,7 +414,7 @@ namespace ClearDemon.Utility.Data
 		/// Gets the top corner (top-left origin).
 		/// </summary>
 		/// <value>The top.</value>
-		public Single Top
+		public float Top
 		{
 			get { return Y; }
 		}
@@ -422,7 +422,7 @@ namespace ClearDemon.Utility.Data
 		/// <summary>
 		/// Gets the rightmost corner (top-left origin).
 		/// </summary>
-		public Single Right
+		public float Right
 		{
 			get { return X + Width; }
 		}
@@ -430,7 +430,7 @@ namespace ClearDemon.Utility.Data
 		/// <summary>
 		/// Gets the bottommost corner (top-left origin).
 		/// </summary>
-		public Single Bottom
+		public float Bottom
 		{
 			get { return Y + Height; }
 		}
@@ -440,14 +440,14 @@ namespace ClearDemon.Utility.Data
 		/// </summary>
 		public bool IsEmpty
 		{
-			get { return Math.Abs(X) < Single.Epsilon && Math.Abs(Y) < Single.Epsilon && Math.Abs(Width) < Single.Epsilon && Math.Abs(Height) < Single.Epsilon; }
+			get { return Math.Abs(X) < float.Epsilon && Math.Abs(Y) < float.Epsilon && Math.Abs(Width) < float.Epsilon && Math.Abs(Height) < float.Epsilon; }
 		}
 
 #region IEquatable implementation
 
 		public bool Equals(CDRectF other)
 		{
-			return Math.Abs(X - other.X) < Single.Epsilon && Math.Abs(Y - other.Y) < Single.Epsilon && Math.Abs(Width - other.Width) < Single.Epsilon && Math.Abs(Height - other.Height) < Single.Epsilon;
+			return Math.Abs(X - other.X) < float.Epsilon && Math.Abs(Y - other.Y) < float.Epsilon && Math.Abs(Width - other.Width) < float.Epsilon && Math.Abs(Height - other.Height) < float.Epsilon;
 		}
 
 #endregion
@@ -457,7 +457,7 @@ namespace ClearDemon.Utility.Data
 			if(obj is CDRect)
 			{
 				var r = (CDRect)obj;
-				return Math.Abs(X - r.X) < Single.Epsilon && Math.Abs(Y - r.Y) < Single.Epsilon && Math.Abs(Width - r.Width) < Single.Epsilon && Math.Abs(Height - r.Height) < Single.Epsilon;
+				return Math.Abs(X - r.X) < float.Epsilon && Math.Abs(Y - r.Y) < float.Epsilon && Math.Abs(Width - r.Width) < float.Epsilon && Math.Abs(Height - r.Height) < float.Epsilon;
 			}
 			return false;
 		}
@@ -473,7 +473,7 @@ namespace ClearDemon.Utility.Data
 
 		public static bool operator ==(CDRectF left, CDRectF right)
 		{
-			return Math.Abs(left.X - right.X) < Single.Epsilon && Math.Abs(left.Y - right.Y) < Single.Epsilon && Math.Abs(left.Width - right.Width) < Single.Epsilon && Math.Abs(left.Height - right.Height) < Single.Epsilon;
+			return Math.Abs(left.X - right.X) < float.Epsilon && Math.Abs(left.Y - right.Y) < float.Epsilon && Math.Abs(left.Width - right.Width) < float.Epsilon && Math.Abs(left.Height - right.Height) < float.Epsilon;
 		}
 
 		public static bool operator !=(CDRectF left, CDRectF right)
@@ -488,7 +488,7 @@ namespace ClearDemon.Utility.Data
 		/// </summary>
 		/// <param name="x">The x coordinate.</param>
 		/// <param name="y">The y coordinate.</param>
-		public bool Contains(Single x, Single y)
+		public bool Contains(float x, float y)
 		{
 			return X <= x && x < X + Width && Y <= y && y < Y + Height;
 		}
@@ -516,7 +516,7 @@ namespace ClearDemon.Utility.Data
 		/// </summary>
 		/// <param name="w">The width.</param>
 		/// <param name="h">The height.</param>
-		public void Inflate(Single w, Single h)
+		public void Inflate(float w, float h)
 		{
 			X -= w;
 			Y -= h;
@@ -547,7 +547,7 @@ namespace ClearDemon.Utility.Data
 			var h = Math.Min(a.Y + a.Height, b.Y + b.Height);
 			if(w >= x && h >= y)
 				return new CDRectF(x, y, w - x, h - y);
-			return CDRectF.Empty;
+			return Empty;
 		}
 
 		/// <summary>

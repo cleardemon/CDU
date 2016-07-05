@@ -2,7 +2,7 @@
 // CDVector.cs
 //
 // Author:
-//       Bart King <bart@cleardemon.com>
+//       Bart King <github@cleardemon.com>
 //
 // Copyright (c) 2016 Bart King
 //
@@ -47,7 +47,7 @@ namespace ClearDemon.Utility.Data
 		/// </summary>
 		/// <param name="x">The x coordinate.</param>
 		/// <param name="y">The y coordinate.</param>
-		public CDVector2(Int32 x, Int32 y)
+		public CDVector2(int x, int y)
 		{
 			X = x;
 			Y = y;
@@ -56,11 +56,11 @@ namespace ClearDemon.Utility.Data
 		/// <summary>
 		/// The x-coordinate of the vector.
 		/// </summary>
-		public Int32 X;
+		public int X;
 		/// <summary>
 		/// The y-coordinate of the vector.
 		/// </summary>
-		public Int32 Y;
+		public int Y;
 
 		/// <summary>
 		/// Gets a value indicating whether this instance is empty.
@@ -159,7 +159,7 @@ namespace ClearDemon.Utility.Data
 		/// </summary>
 		/// <param name="x">The x coordinate.</param>
 		/// <param name="y">The y coordinate.</param>
-		public CDVector2F(Single x, Single y)
+		public CDVector2F(float x, float y)
 		{
 			X = x;
 			Y = y;
@@ -168,11 +168,11 @@ namespace ClearDemon.Utility.Data
 		/// <summary>
 		/// The x-coordinate of the vector.
 		/// </summary>
-		public Single X;
+		public float X;
 		/// <summary>
 		/// The y-coordinate of the vector.
 		/// </summary>
-		public Single Y;
+		public float Y;
 
 		/// <summary>
 		/// Gets a value indicating whether this instance is empty.
@@ -180,7 +180,7 @@ namespace ClearDemon.Utility.Data
 		/// <value><c>true</c> if this instance is empty; otherwise, <c>false</c>.</value>
 		public bool IsEmpty
 		{
-			get { return Math.Abs(X) < Single.Epsilon && Math.Abs(Y) < Single.Epsilon; }
+			get { return Math.Abs(X) < float.Epsilon && Math.Abs(Y) < float.Epsilon; }
 		}
 
 		/// <summary>
@@ -197,7 +197,7 @@ namespace ClearDemon.Utility.Data
 
 		public bool Equals(CDVector2F other)
 		{
-			return Math.Abs(other.X - X) < Single.Epsilon && Math.Abs(other.Y - Y) < Single.Epsilon;
+			return Math.Abs(other.X - X) < float.Epsilon && Math.Abs(other.Y - Y) < float.Epsilon;
 		}
 
 #endregion
@@ -207,7 +207,7 @@ namespace ClearDemon.Utility.Data
 			if(obj is CDVector2F)
 			{
 				var v = (CDVector2F)obj;
-				return Math.Abs(v.X - X) < Single.Epsilon && Math.Abs(v.Y - Y) < Single.Epsilon;
+				return Math.Abs(v.X - X) < float.Epsilon && Math.Abs(v.Y - Y) < float.Epsilon;
 			}
 			return false;
 		}
@@ -228,7 +228,7 @@ namespace ClearDemon.Utility.Data
 
 		public static bool operator ==(CDVector2F left, CDVector2F right)
 		{
-			return Math.Abs(left.X - right.X) < Single.Epsilon && Math.Abs(left.Y - right.Y) < Single.Epsilon;
+			return Math.Abs(left.X - right.X) < float.Epsilon && Math.Abs(left.Y - right.Y) < float.Epsilon;
 		}
 
 		public static bool operator !=(CDVector2F left, CDVector2F right)

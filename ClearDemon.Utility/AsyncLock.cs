@@ -2,7 +2,7 @@
 // AsyncLock.cs
 //
 // Author:
-//       Bart King <bart@cleardemon.com>
+//       Bart King <github@cleardemon.com>
 //
 // Copyright (c) 2016 Bart King
 //
