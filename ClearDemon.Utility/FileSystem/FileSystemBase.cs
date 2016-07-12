@@ -30,7 +30,7 @@ using System.Threading.Tasks;
 
 namespace ClearDemon.Utility.FileSystem
 {
-    public abstract class FileSystemBase
+    public abstract class FileSystemBase : IFileSystem
     {
         public abstract Task<FileDetail> GetFileDetailAsync(string path);
 

@@ -28,13 +28,34 @@ namespace ClearDemon.Utility.Platform
 {
     public static class PlatformUtility
     {
-        
-        public static PlatformUtility Default
+        static IPlatformUtility _current;
+
+        public static IPlatformUtility Default
         {
-            get { }
-            internal set
+            get
             {
+#if DEBUG
+                if(_current == null)
+                    throw new InvalidOperationException("PlatformUtility must be set by platform BEFORE calling PlatformUtility.Default!");
+#endif
+                return _current;
+
             }
+            private set
+            {
+#if DEBUG
+                if(_current != null)
+                    throw new InvalidOperationException("PlatformUtility should not be initialised more than once!");
+                if(value == null)
+                    throw new ArgumentNullException("PlatformUtility.Default cannot be set to null!");
+#endif
+                _current = value;
+            }
+        }
+
+        public static void Init(IPlatformUtility platform)
+        {
+            Default = platform;
         }
     }
 }
