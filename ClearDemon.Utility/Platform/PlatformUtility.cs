@@ -39,7 +39,6 @@ namespace ClearDemon.Utility.Platform
                     throw new InvalidOperationException("PlatformUtility must be set by platform BEFORE calling PlatformUtility.Default!");
 #endif
                 return _current;
-
             }
             private set
             {
