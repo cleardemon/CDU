@@ -38,9 +38,13 @@ namespace ClearDemon.Utility.FileSystem
 
         public abstract Task<bool> DeleteFileAsync(string path);
 
+        public abstract Task<bool> CreateDirectoryAsync(string path, bool allowExisting = true);
+
         public abstract Task<bool> DeleteDirectoryAsync(string path, bool recursive = false);
 
-        public abstract Task<string> GetTemporaryFilePath(bool createFile = false, string useExtension = null);
+        public abstract Task<string> GetTemporaryFilePathAsync(bool createFile = false, string useExtension = null);
+
+        public abstract Task<IEnumerable<string>> GetDirectoryListAsync(string path, bool recursive = false);
 
         public abstract Task<IEnumerable<FileDetail>> GetFileListAsync(string path, bool recursive = false);
 

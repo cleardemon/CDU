@@ -32,19 +32,16 @@ namespace ClearDemon.Utility.FileSystem
         public abstract long Size
         {
             get;
-            protected set;
         }
 
         public abstract DateTime DateCreated
         {
             get;
-            protected set;
         }
 
-        public abstract DateTime? DateModified
+        public abstract DateTime DateModified
         {
             get;
-            protected set;
         }
 
         public abstract bool Exists
