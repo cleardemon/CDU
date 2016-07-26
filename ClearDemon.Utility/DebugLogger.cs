@@ -24,53 +24,35 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using System.IO;
 
 namespace ClearDemon.Utility
 {
-    public class Logger : IDisposable
+    public static class DebugLogger
     {
-        static Logger _defaultLogger = new Logger();
-
-        volatile StreamWriter _diskLog;
-
-        public static Logger Default
+        static void WriteMessage(string level, string msg)
         {
-            get
-            {
-                return _defaultLogger;
-            }
+            System.Diagnostics.Debug.WriteLine($"{DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff")}: [{level}] {msg}");
         }
 
-        public Logger()
+        public static void Debug(string msg)
         {
+            WriteMessage("D", msg);
         }
 
-        #region IDisposable Support
-        bool _disposed;
-
-        protected virtual void Dispose(bool disposing)
+        public static void Info(string msg)
         {
-            if(!_disposed)
-            {
-                if(disposing)
-                {
-                    if(_diskLog != null)
-                    {
-                        _diskLog.Dispose();
-                        _diskLog = null;
-                    }
-                }
-
-                _disposed = true;
-            }
+            WriteMessage("I", msg);
         }
 
-        public void Dispose()
+        public static void Warn(string msg)
         {
-            Dispose(true);
+            WriteMessage("W", msg);
         }
-        #endregion
+
+        public static void Crit(string msg)
+        {
+            WriteMessage("C", msg);
+        }
     }
 }
 

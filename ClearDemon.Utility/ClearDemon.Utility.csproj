@@ -44,7 +44,7 @@
     <Compile Include="FileSystem\FileSystemEnums.cs" />
     <Compile Include="FileSystem\FileDetail.cs" />
     <Compile Include="FileSystem\FileSystemBase.cs" />
-    <Compile Include="Logger.cs" />
+    <Compile Include="DebugLogger.cs" />
     <Compile Include="Platform\PlatformUtility.cs" />
     <Compile Include="AwaitHelper.cs" />
   </ItemGroup>
