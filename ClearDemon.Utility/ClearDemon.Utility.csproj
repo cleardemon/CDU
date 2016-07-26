@@ -40,13 +40,13 @@
     <Compile Include="Data\CDColor.cs" />
     <Compile Include="Data\CDVector.cs" />
     <Compile Include="Data\CDRect.cs" />
-    <Compile Include="AsyncLock.cs" />
     <Compile Include="Data\ObservableCollectionExtended.cs" />
     <Compile Include="FileSystem\FileSystemEnums.cs" />
     <Compile Include="FileSystem\FileDetail.cs" />
     <Compile Include="FileSystem\FileSystemBase.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Platform\PlatformUtility.cs" />
+    <Compile Include="AwaitHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

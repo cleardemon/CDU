@@ -46,7 +46,7 @@ namespace ClearDemon.Utility.Platform
                 if(_current != null)
                     throw new InvalidOperationException("PlatformUtility should not be initialised more than once!");
                 if(value == null)
-                    throw new ArgumentNullException("PlatformUtility.Default cannot be set to null!");
+                    throw new ArgumentNullException(nameof(Default), "PlatformUtility.Default cannot be set to null!");
 #endif
                 _current = value;
             }
