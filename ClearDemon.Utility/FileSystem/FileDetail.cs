@@ -88,7 +88,7 @@ namespace ClearDemon.Utility.FileSystem
         {
             if(fullPath == null)
                 throw new ArgumentNullException(nameof(fullPath));
-            
+
             FullPath = fullPath;
             Name = System.IO.Path.GetFileNameWithoutExtension(fullPath);
             Path = System.IO.Path.GetDirectoryName(fullPath);

@@ -76,37 +76,39 @@ namespace ClearDemon.Utility.Platform
         {
             get
             {
-                if(_formattedVersion == null) {
+                if(_formattedVersion == null)
+                {
                     // format the type of the platform
                     string type;
-                    switch(CurrentPlatform.PlatformType) {
-                        case PlatformInfoType.Android:
-                            type = "Android";
-                            break;
-                        case PlatformInfoType.AppleIOS:
-                            type = "iOS";
-                            break;
-                        case PlatformInfoType.AppleMacOS:
-                            type = "macOS";
-                            break;
-                        case PlatformInfoType.AppleTVOS:
-                            type = "tvOS";
-                            break;
-                        case PlatformInfoType.AppleWatchOS:
-                            type = "watchOS";
-                            break;
-                        case PlatformInfoType.Linux:
-                            type = "Linux";
-                            break;
-                        case PlatformInfoType.Windows:
-                            type = "Windows";
-                            break;
-                        case PlatformInfoType.WindowsPhone:
-                            type = "Windows Phone";
-                            break;
-                        default:
-                            type = "Unknown";
-                            break;
+                    switch(CurrentPlatform.PlatformType)
+                    {
+                    case PlatformInfoType.Android:
+                        type = "Android";
+                        break;
+                    case PlatformInfoType.AppleIOS:
+                        type = "iOS";
+                        break;
+                    case PlatformInfoType.AppleMacOS:
+                        type = "macOS";
+                        break;
+                    case PlatformInfoType.AppleTVOS:
+                        type = "tvOS";
+                        break;
+                    case PlatformInfoType.AppleWatchOS:
+                        type = "watchOS";
+                        break;
+                    case PlatformInfoType.Linux:
+                        type = "Linux";
+                        break;
+                    case PlatformInfoType.Windows:
+                        type = "Windows";
+                        break;
+                    case PlatformInfoType.WindowsPhone:
+                        type = "Windows Phone";
+                        break;
+                    default:
+                        type = "Unknown";
+                        break;
                     }
 
                     _formattedVersion = $"{CurrentPlatform.ManufacturerName} {type} {CurrentPlatform.ReleaseVersion.ToString(2)}";
